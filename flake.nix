@@ -15,7 +15,9 @@
           echo "use flake" >> .envrc && direnv allow          
         fi
 
-        bun install
+        if [ ! -d node_modules ]; then
+          bun install
+        fi
       '';
     };
   };
